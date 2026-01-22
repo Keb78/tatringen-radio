@@ -1,0 +1,609 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(112deg, #000644, #0301a2, #0103b0);
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.header {
+  padding: 30px 0;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Header title row ---------- */
+
+.title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 1px;
+}
+
+.title-row h1 {
+  margin: 0;
+  line-height: 1;
+  font-size: 3.5rem;
+  text-shadow: 0 2px 10px rgba(219, 208, 208, 0.756);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ---------- Logo system (shared + variants) ---------- */
+
+/* shared logo rules */
+.station-logo {
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex: 0 0 auto;
+}
+
+/* header logo size */
+.header-logo {
+  width: 80px;
+  height: 80px;
+}
+
+/* player logo size + centering (if you use it inside player area) */
+.player-logo {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+/* ---------- Player ---------- */
+
+.player-container {
+  background: rgba(1, 16, 0, 0.967);
+  backdrop-filter: blur(10px);
+  border-radius: 5px;
+  padding: 30px;
+  margin-bottom: 3px;
+  box-shadow: 0px 20px 30px rgb(0, 0, 0);
+}
+
+.current-station {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.station-info {
+  flex: 1;
+}
+
+.station-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.station-description {
+  opacity: 0.8;
+  font-size: 1.1rem;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 25px 0;
+}
+
+/* ✅ O-ring buttons (prev/next AND play) */
+.control-btn {
+  position: relative;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* O-ring material */
+  background: conic-gradient(
+    from 200deg,
+    rgba(0,255,255,0.18),
+    rgba(255,255,255,0.08),
+    rgba(0,255,0,0.15),
+    rgba(255,0,255,0.15),
+    rgba(0,255,255,0.18)
+  );
+
+  box-shadow:
+    inset 0 0 8px rgba(0,0,0,0.6),
+    inset 0 4px 6px rgba(255,255,255,0.08),
+    0 8px 18px rgba(0,0,0,0.35);
+
+  /* let the icon define color (metal gradient below) */
+  color: transparent;
+  font-size: 1.5rem;
+}
+
+/* O-ring hole (cutout) */
+.control-btn::before {
+  content: "";
+  position: absolute;
+  inset: 11px; /* ring thickness */
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow:
+    inset 0 0 8px rgba(0,0,0,0.7),
+    0 0 0 1px rgba(255,255,255,0.05);
+}
+
+/* ✅ Steel/metal icons */
+.control-btn i {
+  position: relative;
+  z-index: 1;
+
+  background: linear-gradient(
+    180deg,
+    #f7f7f7 0%,
+    #cfcfcf 25%,
+    #ffffff 45%,
+    #9a9a9a 70%,
+    #f2f2f2 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.25),
+    0 -1px 0 rgba(0,0,0,0.35);
+
+  filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.25));
+}
+
+/* ✅ Keep your glowing hover effect */
+.control-btn:hover {
+  transform: scale(1.15);
+  opacity: 1;
+  box-shadow:
+    0 0 6px 3px #fff,
+    0 0 10px 6px #f0f,
+    0 0 14px 9px #0ff,
+    inset 0 0 10px rgba(0,0,0,0.55);
+}
+
+/* ✅ Hero O-ring play button (bigger, thicker ring) */
+.play-btn {
+  width: 80px;
+  height: 80px;
+  font-size: 2rem;
+}
+
+/* thicker cutout for the bigger ring */
+.play-btn::before {
+  inset: 8px;
+}
+
+.play-btn:hover {
+  transform: scale(1.2);
+}
+
+
+.volume-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.volume-slider {
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+  background: rgba(73, 68, 68, 0.2);
+  outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #014cd7;
+  cursor: pointer;
+}
+
+.progress-container {
+  background: rgba(255, 255, 255, 0.085);
+  height: 6px;
+  border-radius: 3px;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #014cd7, #fafbfc);
+  border-radius: 3px;
+  transition: width 0.1s linear;
+}
+
+.time-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 5px;
+}
+
+/* ---------- Weather ---------- */
+
+.weather-container {
+  position: relative;                 /* ✅ required for overlay */
+
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 30px 0;
+
+  /* extra top padding for the "Last updated" badge */
+  padding: 55px 20px 20px;
+
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
+.weather-section {
+  flex: 1 1 0;          /* ✅ equal width columns */
+  min-width: 260px;     /* ✅ keep them readable */
+  max-width: 360px;     /* optional */
+}
+
+.weather-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.weather-flag {
+  font-size: 2rem;
+  margin-right: 10px;
+}
+
+.weather-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.city-weather {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 15px;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+
+    /* ✅ additions (safe) */
+  min-height: 110px;               /* equal card height */
+  display: flex;                   /* allows vertical centering */
+  flex-direction: column;
+  justify-content: center;
+}
+
+.city-weather:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+.city-name {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.weather-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.temperature {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.weather-icon {
+  font-size: 2rem;
+  margin: 0 10px;
+}
+
+.weather-description {
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* ✅ Last updated overlay (Option A) */
+.last-updated {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+
+  font-size: 0.85rem;
+  opacity: 0.8;
+  white-space: nowrap;
+  pointer-events: none;
+
+  margin: 0;                          /* ✅ no layout impact */
+}
+
+.loading-weather {
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+
+/* ---------- Stations list ---------- */
+
+.stations-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.country-section {
+  background: rgba(0, 0, 0, 0.516);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(3, 3, 3, 0.54);
+}
+
+.country-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.flag {
+  font-size: 2.5rem;
+  margin-right: 15px;
+}
+
+.country-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.station-list {
+  display: grid;
+  gap: 15px;
+}
+
+.station-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.station-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+.station-card.active {
+  background: linear-gradient(90deg, rgba(255,138,0,0.3), rgba(229,46,113,0.3));
+  border-left: 4px solid #ff8a00;
+}
+
+.station-card-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #014cd7, #fafbfc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-size: 1.2rem;
+}
+
+.station-card-info {
+  flex: 1;
+}
+
+.station-card-name {
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.station-card-genre {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.status-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ff0000;
+  margin-left: 10px;
+}
+
+.status-indicator.playing {
+  background-color: #01a60a;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+/* ---------- Errors / footer ---------- */
+
+.error-message {
+  color: #ff6b6b;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  background: rgba(255, 0, 0, 0.1);
+  display: none;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 30px;
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 768px) {
+  .last-updated {
+    top: 12px;
+    right: 12px;
+    font-size: 0.8rem;
+  }
+
+  .title-row h1 {
+    font-size: 2.2rem;
+  }
+
+  .header-logo {
+    width: 54px;
+    height: 54px;
+  }
+
+  .stations-container {
+    grid-template-columns: 1fr;
+  }
+
+  .player-controls {
+    gap: 10px;
+  }
+
+  .control-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .play-btn {
+    width: 70px;
+    height: 70px;
+    font-size: 1.7rem;
+  }
+
+  .weather-container {
+    padding: 50px 16px 16px;
+  }
+}
+/* =========================================================
+   VFD / DOT-MATRIX DISPLAY (current station placeholder)
+   ========================================================= */
+
+.vfd-panel {
+  position: relative;
+  padding: 28px 26px;
+  border-radius: 14px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.35)
+  );
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.06),
+    inset 0 0 30px rgba(0,0,0,0.55),
+    0 12px 30px rgba(0,0,0,0.25);
+}
+
+.vfd-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.04) 0px,
+    rgba(255,255,255,0.04) 1px,
+    transparent 2px,
+    transparent 5px
+  );
+
+  opacity: 0.40;
+  mix-blend-mode: overlay;
+}
+
+.vfd-text {
+  position: relative;
+
+  color: transparent;
+  background: linear-gradient(#d8ff8b, #9bff35);
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-mask-image: radial-gradient(circle, #000 50%, transparent 60%);
+  -webkit-mask-size: 2px 2px;
+  -webkit-mask-position: 0 0;
+
+  text-shadow:
+    0 0 4px rgba(184,255,96,0.55),
+    0 0 12px rgba(184,255,96,0.35),
+    0 0 26px rgba(184,255,96,0.22);
+
+  filter: saturate(1.25)
+          drop-shadow(0 0 10px rgba(184,255,96,0.18));
+}
+
+.vfd-small {
+  opacity: 0.9;
+  -webkit-mask-size: 2px 2px;
+
+  text-shadow:
+    0 0 3px rgba(184,255,96,0.35),
+    0 0 10px rgba(184,255,96,0.22);
+}

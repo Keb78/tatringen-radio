@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tätringen Radio - Swedish & Finnish Stations</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="title-row">
+        <div class="station-logo header-logo" style="background-image: url('./T.png')"></div>
+        <h1>TÄTRINGEN TEKNISKA Radio</h1>
+      </div>
+
+      <p class="subtitle">Swedish and Finnish local radio stations with local weather forecasts</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="player-container">
+      <div class="current-station vfd-panel">
+        <div class="station-info">
+          <div class="station-name vfd-text">Select a station to begin</div>
+          <div class="station-description vfd-text vfd-small">Choose from Swedish, Finnish, or international stations</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+
+    <div class="time-info">
+      <span class="current-time">0:00</span>
+      <span class="duration">Live Stream</span>
+    </div>
+
+    <div class="player-controls">
+      <button class="control-btn prev-btn"><i class="fas fa-step-backward"></i></button>
+      <button class="control-btn play-btn"><i class="fas fa-play"></i></button>
+      <button class="control-btn next-btn"><i class="fas fa-step-forward"></i></button>
+    </div>
+
+    <div class="volume-container">
+      <i class="fas fa-volume-up"></i>
+      <input type="range" class="volume-slider" min="0" max="100" value="80">
+    </div>
+
+    <div class="error-message" id="error-message">
+      Unable to play this station. Please try another one.
+    </div>
+
+    <div class="stations-container">
+      <div class="country-section">
+        <div class="country-header">
+          <div class="flag">🇸🇪</div>
+          <div class="country-name">Sweden</div>
+        </div>
+        <div class="station-list">
+<div class="station-card"
+  data-url="https://live1.sr.se/p1-mp3-96"
+  data-name="Sveriges Radio P1"
+  data-desc="Sweden's national public radio station">
+  <div class="station-card-logo"><i class="fas fa-microphone"></i></div>
+  <div class="station-card-info">
+    <div class="station-card-name">Sveriges Radio P1</div>
+    <div class="station-card-genre">News & Talk</div>
+  </div>
+  <div class="status-indicator"></div>
+</div>
+<div class="station-card"
+  data-url="https://live1.sr.se/p3-mp3-96"
+  data-name="SR P3"
+  data-desc="Pop music and youth culture">
+  <div class="station-card-logo"><i class="fas fa-music"></i></div>
+  <div class="station-card-info">
+    <div class="station-card-name">SR P3</div>
+    <div class="station-card-genre">Pop & Rock</div>
+  </div>
+  <div class="status-indicator"></div>
+</div>
+
+<div class="station-card"
+  data-url="https://live1.sr.se/p4sth-mp3-96"
+  data-name="P4 Stockholm"
+  data-desc="Stockholm's local radio">
+  <div class="station-card-logo"><i class="fas fa-guitar"></i></div>
+  <div class="station-card-info">
+    <div class="station-card-name">P4 Stockholm</div>
+    <div class="station-card-genre">Local News & Music</div>
+  </div>
+  <div class="status-indicator"></div>
+</div>
+
+        </div>
+      </div>
+
+      <div class="country-section">
+        <div class="country-header">
+          <div class="flag">🇫🇮</div>
+          <div class="country-name">Finland</div>
+        </div>
+
+        <div class="station-list">
+          <div class="station-card"
+  data-url="https://yleradiolive.akamaized.net/hls/live/2027672/in-YleRadio1/master.m3u8"
+  data-type="hls"
+  data-name="Yle Radio 1"
+  data-desc="Finland's main news and talk station">
+  <div class="station-card-logo"><i class="fas fa-microphone-alt"></i></div>
+  <div class="station-card-info">
+    <div class="station-card-name">Yle Radio 1</div>
+    <div class="station-card-genre">News & Talk</div>
+  </div>
+  <div class="status-indicator"></div>
+</div>
+
+<div class="station-card"
+  data-url="https://yleradiolive.akamaized.net/hls/live/2027674/in-YleX/master.m3u8"
+  data-type="hls"
+  data-name="YleX"
+  data-desc="Contemporary music and culture">
+  <div class="station-card-logo"><i class="fas fa-headphones"></i></div>
+  <div class="station-card-info">
+    <div class="station-card-name">YleX</div>
+    <div class="station-card-genre">Pop & Contemporary</div>
+  </div>
+  <div class="status-indicator"></div>
+</div>
+
+<div class="station-card"
+     data-url="https://yleradiolive.akamaized.net/hls/live/2027675/in-YleRS/master.m3u8"
+     data-type="hls"
+     data-name="Yle Radio Suomi"
+     data-desc="Finnish music and entertainment">
+  <div class="station-card-logo"><i class="fas fa-compact-disc"></i></div>
+  <div class="station-card-info">
+    <div class="station-card-name">Yle Radio Suomi</div>
+    <div class="station-card-genre">Local Music</div>
+  </div>
+  <div class="status-indicator"></div>
+</div>
+
+        </div>
+      </div>
+
+      <div class="country-section">
+        <div class="country-header">
+          <div class="flag">🌍</div>
+          <div class="country-name">International</div>
+        </div>
+        <div class="station-list">
+          <div class="station-card" data-url="https://jazz-wr04.ice.infomaniak.ch/jazz-wr04-128.mp3" data-name="Blue Note Jazz" data-desc="Classic and contemporary jazz">
+            <div class="station-card-logo"><i class="fas fa-drum"></i></div>
+            <div class="station-card-info">
+              <div class="station-card-name">Blue Note Jazz</div>
+              <div class="station-card-genre">Jazz</div>
+            </div>
+            <div class="status-indicator"></div>
+          </div>
+
+<div class="station-card"
+  data-url="https://stream.srg-ssr.ch/srgssr/rsc_de/aac/96"
+  data-name="Radio Swiss Classic"
+  data-desc="Ad-free classical from Switzerland (worldwide)">
+  <div class="station-card-logo"><i class="fas fa-violin"></i></div>
+  <div class="station-card-info">
+    <div class="station-card-name">Radio Swiss Classic</div>
+    <div class="station-card-genre">Classical</div>
+  </div>
+  <div class="status-indicator"></div>
+</div>
+<div class="station-card"
+     data-url="https://stream.wqxr.org/wqxr"
+     data-name="WQXR Classical"
+     data-desc="New York's classical music station">
+  <div class="station-card-logo"><i class="fas fa-piano"></i></div>
+  <div class="station-card-info">
+    <div class="station-card-name">WQXR Classical</div>
+    <div class="station-card-genre">Classical</div>
+  </div>
+  <div class="status-indicator"></div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ WEATHER -->
+    <div class="weather-container">
+      <div class="loading-weather" id="loading-weather">Loading weather data...</div>
+
+      <div class="weather-section" id="sweden-weather" style="display: none;">
+        <div class="weather-header">
+          <div class="weather-flag">🇸🇪</div>
+          <div class="weather-title">Sweden</div>
+        </div>
+        <div id="sweden-cities"></div>
+      </div>
+
+      <div class="weather-section" id="finland-weather" style="display: none;">
+        <div class="weather-header">
+          <div class="weather-flag">🇫🇮</div>
+          <div class="weather-title">Finland</div>
+        </div>
+        <div id="finland-cities"></div>
+      </div>
+
+      <div class="weather-section" id="antarctica-weather" style="display: none;">
+        <div class="weather-header">
+          <div class="weather-flag">🇦🇶</div>
+          <div class="weather-title">Antarctica</div>
+        </div>
+        <div id="antarctica-cities"></div>
+      </div>
+
+      <div class="weather-last-updated" id="last-updated"></div>
+    </div>
+
+    <footer>
+      <p>Tätringen Tekniska Radio Player  Keb78 &copy; 2026 | Listen to Swedish and Finnish radio stations with local weather</p>
+    </footer>
+
+  </main>
+
+  <audio id="radio-player"></audio>
+
+  <!-- ✅ IMPORTANT: you NEED this for HLS (.m3u8) to work in Chrome/Firefox -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+
+
+ <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const audioPlayer = document.getElementById('radio-player');
+  const playBtn = document.querySelector('.play-btn');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  const stationCards = document.querySelectorAll('.station-card');
+  const stationName = document.querySelector('.station-name');
+  const stationDescription = document.querySelector('.station-description');
+  const volumeSlider = document.querySelector('.volume-slider');
+  const progressBar = document.querySelector('.progress-bar');
+  const statusIndicators = document.querySelectorAll('.status-indicator');
+  const errorMessage = document.getElementById('error-message');
+
+  const loadingWeather = document.getElementById('loading-weather');
+  const swedenWeather = document.getElementById('sweden-weather');
+  const finlandWeather = document.getElementById('finland-weather');
+  const antarcticaWeather = document.getElementById('antarctica-weather');
+
+  const swedenCitiesContainer = document.getElementById('sweden-cities');
+  const finlandCitiesContainer = document.getElementById('finland-cities');
+  const antarcticaCitiesContainer = document.getElementById('antarctica-cities');
+
+  const lastUpdatedElement = document.getElementById('last-updated');
+
+  let currentStationIndex = -1;
+  let isPlaying = false;
+  let lastUpdate = null;
+
+  // ✅ HLS instance
+  let hls = null;
+
+  function stopHls() {
+    if (hls) {
+      hls.destroy();
+      hls = null;
+    }
+  }
+
+  function hideErrorMessage() {
+    errorMessage.style.display = 'none';
+  }
+
+  function showErrorMessage() {
+    errorMessage.style.display = 'block';
+    isPlaying = false;
+    const icon = playBtn.querySelector('i');
+    icon.classList.remove('fa-pause');
+    icon.classList.add('fa-play');
+    updateStatusIndicators();
+  }
+
+  function updateStatusIndicators() {
+    statusIndicators.forEach(indicator => indicator.classList.remove('playing'));
+    if (isPlaying && currentStationIndex !== -1) {
+      stationCards[currentStationIndex].querySelector('.status-indicator')?.classList.add('playing');
+    }
+  }
+
+  // ✅ Load station with HLS support
+  function loadStation(url, type = 'mp3') {
+    hideErrorMessage();
+
+    // stop any previous HLS instance
+    stopHls();
+
+    // Stop current audio cleanly
+    audioPlayer.pause();
+    audioPlayer.removeAttribute('src');
+    audioPlayer.load();
+
+    if (type === 'hls') {
+      // Safari: native HLS
+      if (audioPlayer.canPlayType('application/vnd.apple.mpegurl')) {
+        audioPlayer.src = url;
+      }
+      // Chrome/Firefox: hls.js
+      else if (window.Hls && Hls.isSupported()) {
+        hls = new Hls({ enableWorker: true });
+        hls.loadSource(url);
+        hls.attachMedia(audioPlayer);
+
+        hls.on(Hls.Events.ERROR, function(event, data) {
+          console.error("HLS error:", data);
+          showErrorMessage();
+        });
+      } else {
+        console.warn("HLS not supported in this browser.");
+        showErrorMessage();
+        return;
+      }
+    } else {
+      // mp3/aac/etc
+      audioPlayer.src = url;
+    }
+
+    // Autoplay if already playing
+    if (isPlaying) {
+      audioPlayer.play().catch(e => {
+        console.error("Playback failed:", e);
+        showErrorMessage();
+      });
+    }
+  }
+
+  // Set initial volume
+  audioPlayer.volume = volumeSlider.value / 100;
+
+  // Play/Pause
+  playBtn.addEventListener('click', function() {
+    const icon = playBtn.querySelector('i');
+
+    if (currentStationIndex === -1) {
+      alert('Please select a radio station first');
+      return;
+    }
+
+    if (isPlaying) {
+      audioPlayer.pause();
+      icon.classList.remove('fa-pause');
+      icon.classList.add('fa-play');
+      isPlaying = false;
+      updateStatusIndicators();
+    } else {
+      hideErrorMessage();
+      audioPlayer.play().catch(e => {
+        console.error("Playback failed:", e);
+        showErrorMessage();
+      });
+      icon.classList.remove('fa-play');
+      icon.classList.add('fa-pause');
+      isPlaying = true;
+      updateStatusIndicators();
+    }
+  });
+
+  // Volume
+  volumeSlider.addEventListener('input', function() {
+    audioPlayer.volume = this.value / 100;
+  });
+
+  // Station selection
+  stationCards.forEach((card, index) => {
+    card.addEventListener('click', function() {
+      stationCards.forEach(c => c.classList.remove('active'));
+      this.classList.add('active');
+
+      const url = this.getAttribute('data-url');
+      const name = this.getAttribute('data-name');
+      const desc = this.getAttribute('data-desc');
+
+      // ✅ NEW: type handling
+      const type = this.getAttribute('data-type') || 'mp3';
+
+      stationName.textContent = name;
+      stationDescription.textContent = desc;
+
+      currentStationIndex = index;
+
+      // ✅ Use the new loader
+      loadStation(url, type);
+
+      // If not playing yet, keep ready but don’t force play
+      // If already playing, loadStation() will auto-play
+    });
+  });
+
+  // Prev
+  prevBtn.addEventListener('click', function() {
+    if (currentStationIndex > 0) {
+      stationCards[currentStationIndex - 1].click();
+    } else {
+      stationCards[stationCards.length - 1].click();
+    }
+  });
+
+  // Next
+  nextBtn.addEventListener('click', function() {
+    if (currentStationIndex < stationCards.length - 1) {
+      stationCards[currentStationIndex + 1].click();
+    } else {
+      stationCards[0].click();
+    }
+  });
+
+  // Progress bar (live streams)
+  setInterval(() => {
+    if (isPlaying) progressBar.style.width = '100%';
+  }, 1000);
+
+  // Audio errors
+  audioPlayer.addEventListener('error', function(e) {
+    console.error("Audio error:", e);
+    showErrorMessage();
+  });
+
+  // ---------------- WEATHER (unchanged) ----------------
+
+  function getWeatherIcon(condition) {
+    const lowerCondition = condition.toLowerCase();
+    if (lowerCondition.includes('clear')) return '<i class="fas fa-sun"></i>';
+    if (lowerCondition.includes('cloud')) return '<i class="fas fa-cloud"></i>';
+    if (lowerCondition.includes('rain')) return '<i class="fas fa-cloud-rain"></i>';
+    if (lowerCondition.includes('snow')) return '<i class="fas fa-snowflake"></i>';
+    if (lowerCondition.includes('thunder')) return '<i class="fas fa-bolt"></i>';
+    if (lowerCondition.includes('sun') || lowerCondition.includes('晴')) return '<i class="fas fa-sun"></i>';
+    return '<i class="fas fa-cloud-sun"></i>';
+  }
+
+  function formatLastUpdated(date) {
+    return `Last updated: ${date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`;
+  }
+
+  function displayWeatherData(weatherData) {
+    swedenCitiesContainer.innerHTML = '';
+    finlandCitiesContainer.innerHTML = '';
+    antarcticaCitiesContainer.innerHTML = '';
+
+    weatherData.sweden.forEach(city => {
+      const cityElement = document.createElement('div');
+      cityElement.className = 'city-weather';
+      cityElement.innerHTML = `
+        <div class="city-name">${city.name}</div>
+        <div class="weather-info">
+          <div class="temperature">${Math.round(city.temp)}°C</div>
+          <div class="weather-icon">${getWeatherIcon(city.description)}</div>
+          <div class="weather-description">${city.description}</div>
+        </div>
+      `;
+      swedenCitiesContainer.appendChild(cityElement);
+    });
+
+    weatherData.finland.forEach(city => {
+      const cityElement = document.createElement('div');
+      cityElement.className = 'city-weather';
+      cityElement.innerHTML = `
+        <div class="city-name">${city.name}</div>
+        <div class="weather-info">
+          <div class="temperature">${Math.round(city.temp)}°C</div>
+          <div class="weather-icon">${getWeatherIcon(city.description)}</div>
+          <div class="weather-description">${city.description}</div>
+        </div>
+      `;
+      finlandCitiesContainer.appendChild(cityElement);
+    });
+
+    weatherData.antarctica.forEach(city => {
+      const cityElement = document.createElement('div');
+      cityElement.className = 'city-weather';
+      cityElement.innerHTML = `
+        <div class="city-name">${city.name}</div>
+        <div class="weather-info">
+          <div class="temperature">${Math.round(city.temp)}°C</div>
+          <div class="weather-icon">${getWeatherIcon(city.description)}</div>
+          <div class="weather-description">${city.description}</div>
+        </div>
+      `;
+      antarcticaCitiesContainer.appendChild(cityElement);
+    });
+
+    loadingWeather.style.display = 'none';
+    swedenWeather.style.display = 'block';
+    finlandWeather.style.display = 'block';
+    antarcticaWeather.style.display = 'block';
+
+    lastUpdate = new Date();
+    lastUpdatedElement.textContent = formatLastUpdated(lastUpdate);
+  }
+
+  async function fetchWeatherData() {
+    try {
+      loadingWeather.textContent = 'Loading weather data...';
+      loadingWeather.style.display = 'block';
+      swedenWeather.style.display = 'none';
+      finlandWeather.style.display = 'none';
+      antarcticaWeather.style.display = 'none';
+
+      const swedishCities = ['Stockholm', 'Gothenburg', 'Malmo'];
+      const finnishCities = ['Helsinki', 'Tampere', 'Turku'];
+      const antarcticaStations = ['McMurdo', 'South Pole', 'Rothera'];
+
+      const processCities = async (cities) => {
+        const results = [];
+        for (const city of cities) {
+          try {
+            const response = await fetch(`https://wttr.in/${encodeURIComponent(city)}?format=j1`);
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            const data = await response.json();
+
+            const current = data.current_condition[0];
+            results.push({
+              name: city,
+              temp: parseFloat(current.temp_C),
+              description: current.weatherDesc[0].value,
+              humidity: current.humidity,
+              wind: current.windspeedKmph
+            });
+
+            await new Promise(resolve => setTimeout(resolve, 200));
+          } catch (error) {
+            console.error(`Error fetching weather for ${city}:`, error);
+            results.push({
+              name: city,
+              temp: Math.floor(Math.random() * 15) + 5,
+              description: ['Sunny', 'Cloudy', 'Partly Cloudy', 'Rainy'][Math.floor(Math.random() * 4)],
+              humidity: Math.floor(Math.random() * 50) + 30,
+              wind: Math.floor(Math.random() * 20) + 5
+            });
+          }
+        }
+        return results;
+      };
+
+      const [swedenData, finlandData, antarcticaData] = await Promise.all([
+        processCities(swedishCities),
+        processCities(finnishCities),
+        processCities(antarcticaStations)
+      ]);
+
+      displayWeatherData({
+        sweden: swedenData,
+        finland: finlandData,
+        antarctica: antarcticaData
+      });
+
+    } catch (error) {
+      console.error('Error fetching weather data:', error);
+      loadingWeather.textContent = 'Failed to load weather data. Showing sample data.';
+      setTimeout(() => displaySampleWeather(), 2000);
+    }
+  }
+
+  function displaySampleWeather() {
+    const sampleData = {
+      sweden: [
+        {name: 'Stockholm', temp: 18, description: 'Sunny'},
+        {name: 'Gothenburg', temp: 16, description: 'Partly Cloudy'},
+        {name: 'Malmö', temp: 17, description: 'Cloudy'}
+      ],
+      finland: [
+        {name: 'Helsinki', temp: 15, description: 'Light Rain'},
+        {name: 'Tampere', temp: 14, description: 'Showers'},
+        {name: 'Turku', temp: 13, description: 'Rainy'}
+      ],
+      antarctica: [
+        {name: 'McMurdo', temp: -18, description: 'Snow'},
+        {name: 'South Pole', temp: -35, description: 'Clear'},
+        {name: 'Rothera', temp: -10, description: 'Cloudy'}
+      ]
+    };
+    displayWeatherData(sampleData);
+  }
+
+  fetchWeatherData();
+  setInterval(fetchWeatherData, 1200000);
+});
+</script>
+
+
+</body>
+</html>
