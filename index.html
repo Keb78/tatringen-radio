@@ -23,6 +23,39 @@
   </header>
 
   <main class="container">
+    <!-- ✅ WORLD CLOCK -->
+<section class="clock-panel" aria-label="World clock">
+  <div class="clock-title">Local time</div>
+
+  <div class="clock-grid">
+    <div class="clock-card">
+      <div class="clock-top">
+        <span class="clock-flag">🇸🇪</span>
+        <span class="clock-label">Sweden</span>
+      </div>
+      <div class="clock-time vfd-text" id="time-se">--:--:--</div>
+      <div class="clock-sub" id="date-se">---</div>
+    </div>
+
+    <div class="clock-card">
+      <div class="clock-top">
+        <span class="clock-flag">🇫🇮</span>
+        <span class="clock-label">Finland</span>
+      </div>
+      <div class="clock-time vfd-text" id="time-fi">--:--:--</div>
+      <div class="clock-sub" id="date-fi">---</div>
+    </div>
+
+    <div class="clock-card">
+      <div class="clock-top">
+        <span class="clock-flag">🇦🇶</span>
+        <span class="clock-label">Antarctica</span>
+      </div>
+      <div class="clock-time vfd-text" id="time-aq">--:--:--</div>
+      <div class="clock-sub" id="date-aq">---</div>
+    </div>
+  </div>
+</section>
     <div class="player-container">
       <div class="current-station vfd-panel">
         <div class="station-info">
@@ -97,6 +130,80 @@
   </div>
   <div class="status-indicator"></div>
 </div>
+<!-- 🇸🇪 More Sweden (SR) -->
+
+<div class="station-card"
+  data-url="https://live1.sr.se/p2-mp3-96"
+  data-name="Sveriges Radio P2"
+  data-desc="Classical, jazz & culture">
+  <div class="station-card-logo"><i class="fas fa-violin"></i></div>
+  <div class="station-card-info">
+    <div class="station-card-name">Sveriges Radio P2</div>
+    <div class="station-card-genre">Classical & Culture</div>
+  </div>
+  <div class="status-indicator"></div>
+</div>
+
+<div class="station-card"
+  data-url="https://live1.sr.se/ekotdirekt-mp3-96"
+  data-name="Ekot Direkt"
+  data-desc="News live when it happens">
+  <div class="station-card-logo"><i class="fas fa-newspaper"></i></div>
+  <div class="station-card-info">
+    <div class="station-card-name">Ekot Direkt</div>
+    <div class="station-card-genre">News</div>
+  </div>
+  <div class="status-indicator"></div>
+</div>
+
+<div class="station-card"
+  data-url="https://live1.sr.se/p4plus-mp3-96"
+  data-name="P4 Plus"
+  data-desc="Music classics & nostalgia">
+  <div class="station-card-logo"><i class="fas fa-compact-disc"></i></div>
+  <div class="station-card-info">
+    <div class="station-card-name">P4 Plus</div>
+    <div class="station-card-genre">Classics</div>
+  </div>
+  <div class="status-indicator"></div>
+</div>
+
+<div class="station-card"
+  data-url="https://live1.sr.se/dingata-mp3-96"
+  data-name="P3 Din Gata"
+  data-desc="Hip hop, R&B and urban">
+  <div class="station-card-logo"><i class="fas fa-headphones"></i></div>
+  <div class="station-card-info">
+    <div class="station-card-name">P3 Din Gata</div>
+    <div class="station-card-genre">Hip hop / R&B</div>
+  </div>
+  <div class="status-indicator"></div>
+</div>
+
+<div class="station-card"
+  data-url="https://live1.sr.se/p4gbg-mp3-96"
+  data-name="P4 Göteborg"
+  data-desc="Local news & music (Göteborg)">
+  <div class="station-card-logo"><i class="fas fa-broadcast-tower"></i></div>
+  <div class="station-card-info">
+    <div class="station-card-name">P4 Göteborg</div>
+    <div class="station-card-genre">Local</div>
+  </div>
+  <div class="status-indicator"></div>
+</div>
+
+<div class="station-card"
+  data-url="https://live1.sr.se/p4malm-mp3-96"
+  data-name="P4 Malmöhus"
+  data-desc="Local news & music (Skåne)">
+  <div class="station-card-logo"><i class="fas fa-broadcast-tower"></i></div>
+  <div class="station-card-info">
+    <div class="station-card-name">P4 Malmöhus</div>
+    <div class="station-card-genre">Local</div>
+  </div>
+  <div class="status-indicator"></div>
+</div>
+
 
         </div>
       </div>
@@ -147,6 +254,46 @@
   <div class="status-indicator"></div>
 </div>
 
+
+
+  <div class="station-card"
+    data-url="https://icecast.live.yle.fi/radio/YleVega/icecast.audio"
+    data-name="Yle Vega"
+    data-desc="Swedish-language radio in Finland">
+    <div class="station-card-logo"><i class="fas fa-broadcast-tower"></i></div>
+    <div class="station-card-info">
+      <div class="station-card-name">Yle Vega</div>
+      <div class="station-card-genre">Swedish / Mixed</div>
+    </div>
+    <div class="status-indicator"></div>
+  </div>
+
+  <div class="station-card"
+    data-url="https://icecast.live.yle.fi/radio/YleKlassinen/icecast.audio"
+    data-name="Yle Klassinen"
+    data-desc="Classical music (Yle)">
+    <div class="station-card-logo"><i class="fas fa-violin"></i></div>
+    <div class="station-card-info">
+      <div class="station-card-name">Yle Klassinen</div>
+      <div class="station-card-genre">Classical</div>
+    </div>
+    <div class="status-indicator"></div>
+  </div>
+
+
+
+<div class="station-card"
+  data-url="https://icecast.err.ee/raadio2.mp3"
+  data-name="Raadio 2 (Alt Pop)"
+  data-desc="Alternative pop & indie">
+  <div class="station-card-logo"><i class="fas fa-music"></i></div>
+  <div class="station-card-info">
+    <div class="station-card-name">Raadio 2</div>
+    <div class="station-card-genre">Pop / Indie</div>
+  </div>
+  <div class="status-indicator"></div>
+</div>
+
         </div>
       </div>
 
@@ -184,6 +331,43 @@
   <div class="station-card-info">
     <div class="station-card-name">WQXR Classical</div>
     <div class="station-card-genre">Classical</div>
+  </div>
+  <div class="status-indicator"></div>
+</div>
+<!-- 🌍 International (more genres via SomaFM) -->
+
+<div class="station-card"
+  data-url="https://ice6.somafm.com/groovesalad-128-mp3"
+  data-name="SomaFM – Groove Salad"
+  data-desc="Chilled electronic / downtempo">
+  <div class="station-card-logo"><i class="fas fa-water"></i></div>
+  <div class="station-card-info">
+    <div class="station-card-name">Groove Salad</div>
+    <div class="station-card-genre">Chill / Downtempo</div>
+  </div>
+  <div class="status-indicator"></div>
+</div>
+
+<div class="station-card"
+  data-url="https://ice6.somafm.com/dronezone-128-mp3"
+  data-name="SomaFM – Drone Zone"
+  data-desc="Ambient / atmospheric">
+  <div class="station-card-logo"><i class="fas fa-cloud"></i></div>
+  <div class="station-card-info">
+    <div class="station-card-name">Drone Zone</div>
+    <div class="station-card-genre">Ambient</div>
+  </div>
+  <div class="status-indicator"></div>
+</div>
+
+<div class="station-card"
+  data-url="https://ice6.somafm.com/secretagent-128-mp3"
+  data-name="SomaFM – Secret Agent"
+  data-desc="Spy jazz / soundtrack vibes">
+  <div class="station-card-logo"><i class="fas fa-user-secret"></i></div>
+  <div class="station-card-info">
+    <div class="station-card-name">Secret Agent</div>
+    <div class="station-card-genre">Jazz / Lounge</div>
   </div>
   <div class="status-indicator"></div>
 </div>
@@ -295,6 +479,40 @@ document.addEventListener('DOMContentLoaded', function() {
       stationCards[currentStationIndex].querySelector('.status-indicator')?.classList.add('playing');
     }
   }
+// ---------- WORLD CLOCK ----------
+const clockEls = {
+  se: { time: document.getElementById('time-se'), date: document.getElementById('date-se'), tz: 'Europe/Stockholm' },
+  fi: { time: document.getElementById('time-fi'), date: document.getElementById('date-fi'), tz: 'Europe/Helsinki' },
+  aq: { time: document.getElementById('time-aq'), date: document.getElementById('date-aq'), tz: 'Antarctica/McMurdo' }
+};
+
+// Some browsers/environments may not support certain IANA zones.
+// This helper tries the zone; if it fails, it falls back to UTC.
+function safeFormatter(timeZone, options) {
+  try {
+    return new Intl.DateTimeFormat(undefined, { timeZone, ...options });
+  } catch (e) {
+    return new Intl.DateTimeFormat(undefined, { timeZone: 'UTC', ...options });
+  }
+}
+
+const timeFmt = (tz) => safeFormatter(tz, { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+const dateFmt = (tz) => safeFormatter(tz, { weekday: 'short', year: 'numeric', month: 'short', day: '2-digit' });
+
+function updateClocks() {
+  const now = new Date();
+
+  for (const key in clockEls) {
+    const { time, date, tz } = clockEls[key];
+    if (!time || !date) continue;
+
+    time.textContent = timeFmt(tz).format(now);
+    date.textContent = dateFmt(tz).format(now);
+  }
+}
+
+updateClocks();
+setInterval(updateClocks, 1000);
 
   // ✅ Load station with HLS support
   function loadStation(url, type = 'mp3') {
